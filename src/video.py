@@ -1,4 +1,3 @@
-import json
 import os
 from googleapiclient.discovery import build
 
@@ -34,6 +33,3 @@ class PLVideo(Video):
                                                id=video_id).execute()
         self.video_title: str = video_response['items'][0]['snippet']['title']
         self.playlist_id = playlist_id
-
-    def __str__(self):
-        return f"{self.video_title}"
