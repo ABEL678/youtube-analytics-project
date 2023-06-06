@@ -50,7 +50,7 @@ class PlayList:
             # YouTube video duration is in ISO 8601 format
             iso_8601_duration = video['contentDetails']['duration']
             duration = isodate.parse_duration(iso_8601_duration)
-            total_duration += duration
+            total_duration += int(duration.total_seconds())
         return total_duration
 
     def show_best_video(self):
